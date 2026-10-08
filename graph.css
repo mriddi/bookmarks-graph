@@ -1,0 +1,28 @@
+:root { color-scheme: light; --bg:#f6f7f9; --fg:#24272e; --bar:#ffffff; --line:#d5d8de; }
+:root[data-theme="dark"] { color-scheme: dark; --bg:#16181d; --fg:#d7dae0; --bar:#1e2127; --line:#2f333b; }
+* { box-sizing: border-box; }
+html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); font:13px system-ui, sans-serif; overflow:hidden; }
+#bar { position:fixed; top:0; left:0; right:0; z-index:2; display:flex; gap:10px; align-items:center; padding:8px 12px; background:var(--bar); border-bottom:1px solid var(--line); }
+#bar input[type=search], #bar select, #bar button { background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:5px 8px; font:inherit; }
+#q { width:280px; }
+#bar label { display:flex; gap:5px; align-items:center; white-space:nowrap; }
+#bar input[type=range] { width:110px; vertical-align:middle; }
+#panel { position:fixed; z-index:2; top:52px; right:12px; width:310px; padding:10px 12px; background:var(--bar); border:1px solid var(--line); border-radius:8px; max-height:calc(100% - 70px); overflow:auto; }
+#panel .row { display:grid; grid-template-columns:1fr 54px; gap:2px 8px; margin-bottom:9px; }
+#panel .row span { opacity:.6; text-align:right; font-variant-numeric:tabular-nums; }
+#panel .row input { grid-column:1 / 3; width:100%; }
+#panel .row.check { grid-template-columns:1fr; }
+#panel .row.check label { display:flex; gap:6px; align-items:center; }
+#panel .row.check input { width:auto; grid-column:auto; }
+#panel .row.theme { grid-template-columns:1fr auto; align-items:center; }
+#panel .row.theme button { width:auto; min-width:110px; }
+#panel .hint { grid-column:1 / 3; font-size:11px; opacity:.5; }
+#panel button { background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:5px 8px; font:inherit; width:100%; }
+#stats { margin-left:auto; opacity:.6; }
+canvas { position:fixed; inset:0; width:100%; height:100%; display:block; cursor:grab; }
+canvas.drag { cursor:grabbing; }
+canvas.hit { cursor:pointer; }
+#tip { position:fixed; z-index:3; max-width:420px; pointer-events:none; padding:6px 9px; background:var(--bar); border:1px solid var(--line); border-radius:6px; word-break:break-all; }
+#tip small { display:block; opacity:.6; margin-top:2px; }
+@media (max-width:700px) { #q { width:140px; } #stats { display:none; } }
+#fit, #gear { display:inline-flex; align-items:center; justify-content:center; min-width:32px; height:30px; padding:0 8px; cursor:pointer; }

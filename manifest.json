@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Bookmarks Graph",
+  "version": "1.0",
+  "description": "Firefox bookmarks as an Obsidian-style graph",
+  "permissions": [
+    "bookmarks",
+    "tabs"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bookmarks-graph@local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Bookmarks Graph",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  }
+}
